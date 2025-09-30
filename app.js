@@ -16,7 +16,7 @@ app.use(cors({
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
-}))
+}));
 connectDatabase();
 app.use('/api/v1',products);
 app.use('/api/v1',orders);
@@ -24,4 +24,3 @@ app.listen(process.env.PORT,() => {
     console.log(`Server is running on http://localhost:${process.env.PORT} in ${process.env.MODE_ENV} mode`);
     
 })
-
