@@ -11,7 +11,7 @@ const orders = require('./routes/order');
 app.use(express.json());
 app.use(cors({
     origin: [
-        'https://frontend-one-snowy-38.vercel.app/',
+        'https://frontend-one-snowy-38.vercel.app',
         'http://localhost:3000'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -24,5 +24,6 @@ app.listen(process.env.PORT,() => {
     console.log(`Server is running on http://localhost:${process.env.PORT} in ${process.env.MODE_ENV} mode`);
     
 })
+
 
 
