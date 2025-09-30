@@ -9,10 +9,14 @@ dotenv.config({path: path.join(__dirname,'./config/config.env')});
 const products = require('./routes/product');
 const orders = require('./routes/order');
 app.use(express.json());
-app.use(cors());
-app.use(cors({origin: 'https://shopping-app-1109.vercel.app/',methods: ['GET','POST','PUT','DELETE'],
-credentials: true}));
-
+app.use(cors({
+    origin: [
+        'https://shopping-app-1109.vercel.app',
+        'http://localhost:3000'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use('/api/v1',products);
 app.use('/api/v1',orders);
 connectDatabase();
